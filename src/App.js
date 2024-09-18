@@ -1,18 +1,9 @@
 import React from 'react'
-import Header from './components/Header'
-import Nav from './components/Nav'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import HomePage from './pages/home'
+import './global.css'
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
-    </>
-  )
+  return <HomePage />
 }
 
 export default App
