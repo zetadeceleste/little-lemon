@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/images/little-lemon-logo.webp'
+import image from '../../assets/images/hero-image.jpg'
 import './styles.css'
 
 function HeroSection() {
@@ -9,7 +9,7 @@ function HeroSection() {
         <div className="text">
           <hgroup className="titles">
             <h1>Little Lemon</h1>
-            <h2>Chicago</h2>
+            <h3>Chicago</h3>
           </hgroup>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quas
@@ -20,7 +20,11 @@ function HeroSection() {
         </div>
         <button className="btn">Start free trial</button>
       </div>
-      <img src={logo} alt="Little Lemon Logo" />
+      <img
+        className="hero-image img-responsive"
+        src={image}
+        alt="Little Lemon Logo"
+      />
     </section>
   )
 }

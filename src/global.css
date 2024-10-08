@@ -5,12 +5,19 @@
 }
 
 section {
-  min-height: 100vh;
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 h1 {
   font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 a {
@@ -31,7 +38,13 @@ li {
   background-color: #333;
   border: none;
   color: #fff;
+  min-height: 50px;
   font-size: 1rem;
   padding: 0.5rem 1.5rem;
   width: fit-content;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }
