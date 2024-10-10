@@ -11,7 +11,7 @@ function Footer() {
         { link: '/about', text: 'About' },
         { link: '/menu', text: 'Menu' },
         { link: '/reservations', text: 'Reservations' },
-        { link: '/order', text: 'Order Online' },
+        { link: '/booking', text: 'Order Online' },
         { link: '/login', text: 'Login' },
       ],
     },
