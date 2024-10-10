@@ -1,3 +1,41 @@
 .footer {
   background-color: #333;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    padding: 3rem 1rem;
+    gap: 2rem;
+
+    .footer-image {
+      width: 300px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      max-width: 200px;
+      gap: 1rem;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .footer {
+    .wrapper {
+      flex-direction: row;
+    }
+  }
 }

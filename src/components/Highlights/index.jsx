@@ -2,10 +2,8 @@ import React from 'react'
 import greekSaladImage from '../../assets/images/greek-salad.jpg'
 import tunaSandwichImage from '../../assets/images/tuna-sandwich.jpg'
 import carrotCake from '../../assets/images/carrot-cake.jpg'
-
-import './styles.css'
-
 import Card from './Card'
+import './styles.css'
 
 function Highlights() {
   const cards = [
@@ -32,11 +30,17 @@ function Highlights() {
     },
   ]
 
+  const handleClick = () => {
+    alert('Button clicked')
+  }
+
   return (
-    <section className="highlights breakpoint">
+    <section className="highlights-section breakpoint">
       <div className="wrapper">
         <h2>Specials</h2>
-        <button className="btn">Start free trial</button>
+        <button onClick={handleClick} className="btn">
+          Start free trial
+        </button>
       </div>
       <div className="card-wrapper">
         {cards.map((card, index) => (

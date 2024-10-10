@@ -1,11 +1,11 @@
-.highlights {
+.highlights-section {
   display: grid;
   grid-template-rows: auto 1fr;
   align-items: center;
   justify-items: center;
   gap: 3rem;
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   width: 100%;
 
   .wrapper {
@@ -25,7 +25,7 @@
 }
 
 @media (width >= 768px) {
-  .highlights {
+  .highlights-section {
     .card-wrapper {
       flex-direction: row;
     }

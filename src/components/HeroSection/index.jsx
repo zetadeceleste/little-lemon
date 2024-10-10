@@ -3,6 +3,10 @@ import image from '../../assets/images/hero-image.jpg'
 import './styles.css'
 
 function HeroSection() {
+  const handleClick = () => {
+    alert('Button clicked')
+  }
+
   return (
     <section className="hero-section breakpoint">
       <div className="wrapper">
@@ -18,12 +22,14 @@ function HeroSection() {
             repellendus veritatis necessitatibus.
           </p>
         </div>
-        <button className="btn">Start free trial</button>
+        <button onClick={handleClick} className="btn">
+          Start free trial
+        </button>
       </div>
       <img
         className="hero-image img-responsive"
         src={image}
-        alt="Little Lemon Logo"
+        alt="Little Lemon"
       />
     </section>
   )

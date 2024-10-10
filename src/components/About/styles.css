@@ -1,3 +1,49 @@
-.about {
-  background-color: aliceblue;
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 0;
+  padding: 3rem 1rem;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .titles {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .about-image {
+    display: none;
+  }
+}
+
+@media (width >= 768px) {
+  .about-section {
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    gap: 3rem;
+
+    .wrapper {
+      height: 100%;
+    }
+
+    .about-image {
+      display: block;
+    }
+  }
 }
