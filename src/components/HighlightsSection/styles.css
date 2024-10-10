@@ -8,14 +8,14 @@
   padding: 3rem 1rem;
   width: 100%;
 
-  .wrapper {
+  .text-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
   }
 
-  .card-wrapper {
+  .cards-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,7 +26,7 @@
 
 @media (width >= 768px) {
   .highlights-section {
-    .card-wrapper {
+    .cards-wrapper {
       flex-direction: row;
     }
   }

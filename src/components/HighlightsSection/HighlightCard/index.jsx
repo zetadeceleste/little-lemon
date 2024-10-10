@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.css'
 
-function Card({ title, price, description, image }) {
+function HighlightCard({ title, price, description, image }) {
   return (
-    <div className="card">
+    <div className="highlight-card">
       <img className="card-image img-responsive" src={image} alt={title} />
       <div className="wrapper">
         <div className="text">
@@ -17,4 +17,4 @@ function Card({ title, price, description, image }) {
   )
 }
 
-export default Card
+export default HighlightCard

@@ -2,7 +2,7 @@ import React from 'react'
 import image from '../../assets/images/about-image.jpg'
 import './styles.css'
 
-function About() {
+function AboutSection() {
   return (
     <section className="about-section breakpoint">
       <div className="wrapper">
@@ -28,4 +28,4 @@ function About() {
   )
 }
 
-export default About
+export default AboutSection

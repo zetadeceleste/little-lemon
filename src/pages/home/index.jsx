@@ -1,17 +1,17 @@
 import React from 'react'
 import HeroSection from '../../components/HeroSection'
-import Highlights from '../../components/Highlights'
-import Testimonials from '../../components/Testimonials'
-import About from '../../components/About'
+import HighlightsSection from '../../components/HighlightsSection'
+import TestimonialsSection from '../../components/TestimonialsSection'
+import AboutSection from '../../components/AboutSection'
 import Layout from '../../layout/'
 
 function HomePage() {
   return (
     <Layout>
       <HeroSection />
-      <Highlights />
-      <Testimonials />
-      <About />
+      <HighlightsSection />
+      <TestimonialsSection />
+      <AboutSection />
     </Layout>
   )
 }

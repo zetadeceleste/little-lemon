@@ -1,12 +1,12 @@
 import React from 'react'
-import greekSaladImage from '../../assets/images/greek-salad.jpg'
-import tunaSandwichImage from '../../assets/images/tuna-sandwich.jpg'
-import carrotCake from '../../assets/images/carrot-cake.jpg'
-import Card from './Card'
+import greekSaladImage from '../../assets/images/greek-salad-image.jpg'
+import tunaSandwichImage from '../../assets/images/tuna-sandwich-image.jpg'
+import carrotCake from '../../assets/images/carrot-cake-image.jpg'
+import HighlightCard from './HighlightCard'
 import './styles.css'
 
-function Highlights() {
-  const cards = [
+function HighlightsSection() {
+  const dishes = [
     {
       title: 'Greek Salad',
       price: '$9.99',
@@ -36,19 +36,19 @@ function Highlights() {
 
   return (
     <section className="highlights-section breakpoint">
-      <div className="wrapper">
+      <div className="text-wrapper">
         <h2>Specials</h2>
         <button onClick={handleClick} className="btn">
           Start free trial
         </button>
       </div>
-      <div className="card-wrapper">
-        {cards.map((card, index) => (
-          <Card key={index} {...card} />
+      <div className="cards-wrapper">
+        {dishes.map((dish, index) => (
+          <HighlightCard key={index} {...dish} />
         ))}
       </div>
     </section>
   )
 }
 
-export default Highlights
+export default HighlightsSection
