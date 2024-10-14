@@ -1,16 +1,12 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/home'
-import BookingPage from './pages/booking'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Main from './layout/Main'
 import './global.css'
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/booking" element={<BookingPage />} />
-      </Routes>
+      <Main />
     </Router>
   )
 }

@@ -1,33 +1,28 @@
 import React, { useState } from 'react'
 import './styles.css'
 
-function BookingForm() {
+function BookingForm({ availableTimes, onDateChange, onSubmit }) {
   const [date, setDate] = useState(new Date().toISOString().split('T')[0])
   const [time, setTime] = useState('20:00')
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Birthday')
 
-  const [availableTimes] = useState([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ])
-
-  const handleDateChange = (e) => setDate(e.target.value)
-  const handleTimeChange = (e) => setTime(e.target.value)
-  const handleGuestsChange = (e) => setGuests(e.target.value)
-  const handleOccasionChange = (e) => setOccasion(e.target.value)
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value
+    setDate(selectedDate)
+    onDateChange(selectedDate)
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log({ date, time, guests, occasion })
+    const formData = { date, time, guests, occasion }
+    if (onSubmit) {
+      onSubmit(formData)
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="booking-form">
+    <form onSubmit={handleSubmit} className="booking-form" role="form">
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -37,7 +32,11 @@ function BookingForm() {
       />
 
       <label htmlFor="res-time">Choose time</label>
-      <select id="res-time" value={time} onChange={handleTimeChange}>
+      <select
+        id="res-time"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+      >
         {availableTimes.map((availableTime) => (
           <option key={availableTime} value={availableTime}>
             {availableTime}
@@ -53,11 +52,15 @@ function BookingForm() {
         max="10"
         id="guests"
         value={guests}
-        onChange={handleGuestsChange}
+        onChange={(e) => setGuests(e.target.value)}
       />
 
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" value={occasion} onChange={handleOccasionChange}>
+      <select
+        id="occasion"
+        value={occasion}
+        onChange={(e) => setOccasion(e.target.value)}
+      >
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
       </select>

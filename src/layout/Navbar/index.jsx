@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/images/little-lemon-logo.webp'
 import './styles.css'
 
@@ -9,22 +10,22 @@ function Navbar() {
         <img className="logo" src={logo} alt="Little Lemon Logo" />
         <ul className="links">
           <li>
-            <a href="/home">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/menu">Menu</a>
+            <Link to="/menu">Menu</Link>
           </li>
           <li>
-            <a href="/reservations">Reservations</a>
+            <Link to="/reservations">Reservations</Link>
           </li>
           <li>
-            <a href="/booking">Order online</a>
+            <Link to="/booking">Order online</Link>
           </li>
           <li>
-            <a href="/login">Login</a>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </nav>

@@ -1,12 +1,12 @@
 import React from 'react'
 import BookingSection from '../../components/BookingSection'
-import Layout from '../../layout/'
 
-function BookingPage() {
+function BookingPage({ availableTimes, onDateChange }) {
   return (
-    <Layout>
-      <BookingSection />
-    </Layout>
+    <BookingSection
+      availableTimes={availableTimes}
+      onDateChange={onDateChange}
+    />
   )
 }
 
