@@ -32,6 +32,10 @@ function Main() {
     dispatch({ type: 'UPDATE_TIMES', payload: date })
   }
 
+  const handleFormSubmit = (formData) => {
+    console.log('Confirmed reservation:', formData)
+  }
+
   console.log('availableTimes en Main:', availableTimes)
 
   return (
@@ -45,6 +49,7 @@ function Main() {
             <BookingPage
               availableTimes={availableTimes}
               onDateChange={handleDateChange}
+              onSubmit={handleFormSubmit}
             />
           }
         />

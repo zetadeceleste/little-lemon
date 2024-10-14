@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import BookingForm from '../components/BookingSection/BookingForm'
+import BookingForm from '../components/BookingForm'
 
 test('Renders the Choose date label', () => {
   const availableTimes = ['17:00', '18:00']

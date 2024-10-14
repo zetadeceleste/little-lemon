@@ -16,12 +16,14 @@ function BookingForm({ availableTimes, onDateChange, onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = { date, time, guests, occasion }
+    console.log('Form data:', formData)
     if (onSubmit) {
       onSubmit(formData)
     }
   }
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-redundant-roles
     <form onSubmit={handleSubmit} className="booking-form" role="form">
       <label htmlFor="res-date">Choose date</label>
       <input

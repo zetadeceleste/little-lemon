@@ -1,12 +1,16 @@
 import React from 'react'
-import BookingSection from '../../components/BookingSection'
+import BookingForm from '../../components/BookingForm'
 
-function BookingPage({ availableTimes, onDateChange }) {
+function BookingPage({ availableTimes, onDateChange, onSubmit }) {
   return (
-    <BookingSection
-      availableTimes={availableTimes}
-      onDateChange={onDateChange}
-    />
+    <section className="booking-section breakpoint">
+      <h1>Booking Page</h1>
+      <BookingForm
+        availableTimes={availableTimes}
+        onDateChange={onDateChange}
+        onSubmit={onSubmit}
+      />
+    </section>
   )
 }
 
