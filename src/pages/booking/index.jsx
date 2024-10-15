@@ -14,32 +14,44 @@ function BookingPage({ availableTimes, onDateChange }) {
   }
 
   return (
-    <section className="booking-section breakpoint">
-      <h1>Booking Page</h1>
+    <section
+      className="booking-section breakpoint"
+      aria-labelledby="booking-heading"
+    >
+      <h1 id="booking-heading">Booking Page</h1>
       <BookingForm
         availableTimes={availableTimes}
         onDateChange={onDateChange}
         onSubmit={handleFormSubmit}
       />
-      <h2>Current Reservations</h2>
-      <table>
+
+      <h2 id="reservations-heading">Current Reservations</h2>
+      <table aria-labelledby="reservations-heading">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Guests</th>
-            <th>Occasion</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Guests</th>
+            <th scope="col">Occasion</th>
           </tr>
         </thead>
         <tbody>
-          {bookingData.map((booking, index) => (
-            <tr key={index}>
-              <td>{booking.date}</td>
-              <td>{booking.time}</td>
-              <td>{booking.guests}</td>
-              <td>{booking.occasion}</td>
+          {bookingData.length > 0 ? (
+            bookingData.map((booking, index) => (
+              <tr key={index}>
+                <td>{booking.date}</td>
+                <td>{booking.time}</td>
+                <td>{booking.guests}</td>
+                <td>{booking.occasion}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4" aria-live="polite">
+                No reservations available.
+              </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </section>

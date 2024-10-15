@@ -11,21 +11,20 @@ function HighlightsSection() {
       title: 'Greek Salad',
       price: '$9.99',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quas voluptates ipsa mollitia recusandae, ad itaque expedita dignissimos nam laboriosam voluptate. Rem reprehenderit ad nesciunt porro omnis repellendus veritatis necessitatibus.',
+        'A fresh salad with cucumbers, tomatoes, feta cheese, and olives.',
       image: greekSaladImage,
     },
     {
       title: 'Tuna Sandwich',
       price: '$5.99',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quas voluptates ipsa mollitia recusandae, ad itaque expedita dignissimos nam laboriosam voluptate. Rem reprehenderit ad nesciunt porro omnis repellendus veritatis necessitatibus.',
+        'A delicious sandwich with tuna, lettuce, and mayonnaise on whole grain bread.',
       image: tunaSandwichImage,
     },
     {
       title: 'Carrot Cake',
       price: '$7.99',
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quas voluptates ipsa mollitia recusandae, ad itaque expedita dignissimos nam laboriosam voluptate. Rem reprehenderit ad nesciunt porro omnis repellendus veritatis necessitatibus.',
+      description: 'A moist carrot cake topped with cream cheese frosting.',
       image: carrotCake,
     },
   ]
@@ -35,16 +34,27 @@ function HighlightsSection() {
   }
 
   return (
-    <section className="highlights-section breakpoint">
+    <section
+      className="highlights-section breakpoint"
+      aria-labelledby="highlights-title"
+    >
       <div className="text-wrapper">
-        <h2>Specials</h2>
-        <button onClick={handleClick} className="btn">
+        <h2 id="highlights-title">Specials</h2>
+        <button
+          onClick={handleClick}
+          className="btn"
+          aria-label="Start your free trial"
+        >
           Start free trial
         </button>
       </div>
-      <div className="cards-wrapper">
+      <div className="cards-wrapper" role="list" aria-label="Dish highlights">
         {dishes.map((dish, index) => (
-          <HighlightCard key={index} {...dish} />
+          <HighlightCard
+            key={index}
+            {...dish}
+            aria-label={`Highlight card for ${dish.title}`}
+          />
         ))}
       </div>
     </section>

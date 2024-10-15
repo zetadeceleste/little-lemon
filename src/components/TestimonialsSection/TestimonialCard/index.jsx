@@ -1,18 +1,34 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import './styles.css'
 
 function TestimonialCard({ rating, image, name, review }) {
   return (
-    <div className="testimonial-card">
+    <article
+      className="testimonial-card"
+      role="listitem"
+      aria-labelledby={`${name}-title`}
+      aria-describedby={`${name}-review`}
+    >
       <div className="wrapper">
-        <h4 className="rating">{rating}</h4>
+        <h4
+          id={`${name}-rating`}
+          className="rating"
+          aria-label={`Rating: ${rating}`}
+        >
+          {rating}
+        </h4>
         <div className="image-wrapper">
-          <img className="card-image img-responsive" src={image} alt={name} />
-          <h4>{name}</h4>
+          <img
+            className="card-image img-responsive"
+            src={image}
+            alt={`Photo of ${name}`}
+          />
+          <h4 id={`${name}-title`}>{name}</h4>
         </div>
-        <p>{review}</p>
+        <p id={`${name}-review`}>{review}</p>
       </div>
-    </div>
+    </article>
   )
 }
 

@@ -44,7 +44,7 @@ function Main() {
 
   return (
     <BookingProvider>
-      <main className="layout">
+      <main className="layout" aria-label="Main content">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

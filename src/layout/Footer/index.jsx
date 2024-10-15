@@ -34,13 +34,24 @@ function Footer() {
   ]
 
   function renderLinks() {
-    return links.map((link, index) => (
-      <div key={index} className="list">
-        <h3>{link.title}</h3>
-        <ul>
-          {link.items.map(({ link, text }, index) => (
-            <li key={index}>
-              <a href={link}>{text}</a>
+    return links.map((section, index) => (
+      <div
+        key={index}
+        className="list"
+        aria-labelledby={`section-title-${index}`}
+      >
+        <h3 id={`section-title-${index}`}>{section.title}</h3>
+        <ul aria-label={`${section.title} links`}>
+          {section.items.map(({ link, text }, itemIndex) => (
+            <li key={itemIndex}>
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Navigate to ${text}`}
+              >
+                {text}
+              </a>
             </li>
           ))}
         </ul>
@@ -49,12 +60,12 @@ function Footer() {
   }
 
   return (
-    <footer className="footer">
-      <nav className="wrapper breakpoint">
+    <footer className="footer" aria-label="Footer">
+      <nav className="wrapper breakpoint" aria-label="Footer Navigation">
         <img
           className="footer-image img-responsive"
           src={image}
-          alt="Little Lemon"
+          alt="Little Lemon logo"
         />
         {renderLinks()}
       </nav>

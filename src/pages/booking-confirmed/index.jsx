@@ -4,13 +4,18 @@ import './styles.css'
 
 function BookingConfirmedPage() {
   return (
-    <section className="booking-confirmed">
-      <h1>Reservation Confirmed!</h1>
+    <section
+      className="booking-confirmed"
+      aria-labelledby="confirmation-heading"
+    >
+      <h1 id="confirmation-heading">Reservation Confirmed!</h1>
       <p>
         Your table has been successfully reserved. We look forward to seeing
         you!
       </p>
-      <Link to="/">Return to Home</Link>
+      <Link to="/" className="btn" aria-label="Return to Home">
+        Return to Home
+      </Link>
     </section>
   )
 }

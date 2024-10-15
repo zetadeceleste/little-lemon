@@ -5,27 +5,41 @@ import './styles.css'
 
 function Navbar() {
   return (
-    <header className="header">
-      <nav className="navbar breakpoint">
-        <img className="logo" src={logo} alt="Little Lemon Logo" />
-        <ul className="links">
-          <li>
-            <Link to="/">Home</Link>
+    <header className="header" aria-label="Main Header">
+      <nav className="navbar breakpoint" aria-label="Main Navigation">
+        <Link to="/" aria-label="Go to Home">
+          <img className="logo" src={logo} alt="Little Lemon Logo" />
+        </Link>
+        <ul className="links" role="menu" aria-label="Primary Navigation Links">
+          <li role="menuitem">
+            <Link to="/" aria-label="Home Page">
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/about">About</Link>
+          <li role="menuitem">
+            <Link to="/about" aria-label="About Us Page">
+              About
+            </Link>
           </li>
-          <li>
-            <Link to="/menu">Menu</Link>
+          <li role="menuitem">
+            <Link to="/menu" aria-label="Menu Page">
+              Menu
+            </Link>
           </li>
-          <li>
-            <Link to="/reservations">Reservations</Link>
+          <li role="menuitem">
+            <Link to="/reservations" aria-label="Reservations Page">
+              Reservations
+            </Link>
           </li>
-          <li>
-            <Link to="/booking">Order online</Link>
+          <li role="menuitem">
+            <Link to="/booking" aria-label="Order Online Page">
+              Order online
+            </Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
+          <li role="menuitem">
+            <Link to="/login" aria-label="Login Page">
+              Login
+            </Link>
           </li>
         </ul>
       </nav>

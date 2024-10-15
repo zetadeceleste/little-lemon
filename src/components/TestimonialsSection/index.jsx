@@ -29,11 +29,22 @@ function TestimonialsSection() {
   ]
 
   return (
-    <section className="testimonials-section breakpoint">
-      <h2>Testimonials</h2>
-      <div className="cards-wrapper">
+    <section
+      className="testimonials-section breakpoint"
+      aria-labelledby="testimonials-title"
+    >
+      <h2 id="testimonials-title">Testimonials</h2>
+      <div
+        className="cards-wrapper"
+        role="list"
+        aria-label="Customer testimonials"
+      >
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} {...testimonial} />
+          <TestimonialCard
+            key={index}
+            {...testimonial}
+            aria-label={`Testimonial from ${testimonial.name}`}
+          />
         ))}
       </div>
     </section>

@@ -4,11 +4,11 @@ import './styles.css'
 
 function AboutSection() {
   return (
-    <section className="about-section breakpoint">
+    <section className="about-section breakpoint" aria-labelledby="about-title">
       <div className="wrapper">
         <div className="text">
           <hgroup className="titles">
-            <h2>Little Lemon</h2>
+            <h2 id="about-title">Little Lemon</h2>
             <h3>Chicago</h3>
           </hgroup>
           <p>
@@ -22,7 +22,8 @@ function AboutSection() {
       <img
         className="about-image img-responsive"
         src={image}
-        alt="Little Lemon"
+        alt="Restaurant Little Lemon in Chicago"
+        aria-label="About Little Lemon restaurant"
       />
     </section>
   )
