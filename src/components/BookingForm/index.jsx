@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './styles.css'
 
 function BookingForm({ availableTimes, onDateChange, onSubmit }) {
   const [date, setDate] = useState(new Date().toISOString().split('T')[0])
-  const [time, setTime] = useState('20:00')
+  const [time, setTime] = useState(availableTimes[0] || '')
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Birthday')
+
+  useEffect(() => {
+    if (availableTimes.length > 0) {
+      setTime(availableTimes[0])
+    }
+  }, [availableTimes])
 
   const handleDateChange = (e) => {
     const selectedDate = e.target.value
@@ -16,10 +22,7 @@ function BookingForm({ availableTimes, onDateChange, onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = { date, time, guests, occasion }
-    console.log('Form data:', formData)
-    if (onSubmit) {
-      onSubmit(formData)
-    }
+    onSubmit(formData) // Llamar a la función submitForm
   }
 
   return (
@@ -49,10 +52,9 @@ function BookingForm({ availableTimes, onDateChange, onSubmit }) {
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
-        placeholder="1"
+        id="guests"
         min="1"
         max="10"
-        id="guests"
         value={guests}
         onChange={(e) => setGuests(e.target.value)}
       />
